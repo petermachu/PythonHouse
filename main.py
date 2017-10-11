@@ -20,7 +20,7 @@ cellar.set_description ("A dark smelly room littered with rotting food that emit
 
 wine_cellar = Room("Wine Cellar")
 wine_cellar.set_description ("A nearly pitch black room with empty wineracks along the walls and broken glass on the floor.")
-                         
+
 kitchen.link_room(dining_hall, "south")
 dining_hall.link_room(kitchen, "north")
 dining_hall.link_room(ballroom, "west")
