@@ -15,6 +15,12 @@ closet.set_description("A small closet filled with cleaning supplies.")
 hallway = Room("Hallway")
 hallway.set_description ("A long hallway lined with paintings."
 
+cellar = Room("Cellar")
+cellar.set_description ("A dark smelly room littered with rotting food that emits a powerful odour.")
+
+wine_cellar = Room("Wine Cellar")
+wine_cellar.set_description ("A nearly pitch black room with empty wineracks along the walls and broken glass on the floor.")
+                         
 kitchen.link_room(dining_hall, "south")
 dining_hall.link_room(kitchen, "north")
 dining_hall.link_room(ballroom, "west")
@@ -23,7 +29,11 @@ hallway.link_room(ballroom, "south")
 ballroom.link_room(hallway, "north")
 hallway.link_room(closet, "west")
 closet.link_room(hallway, "east")
-
+cellar.link_room(kitchen, "down")
+kitchen.link_room(cellar, "up")
+cellar.link_room(wine_cellar, "east")
+wine_cellar.link_room(cellar, "west")
+                         
 current_room = kitchen
 
 while True:
