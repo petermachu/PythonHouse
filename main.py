@@ -9,9 +9,6 @@ dining_hall.set_description("A large room with ornate golden decorations on ever
 ballroom = Room("Ballroom")
 ballroom.set_description("A vast room with a shiny wooden floor. Huge candlesticks guard the entrance.")
 
-closet = Room("Closet")
-closet.set_description("A small closet filled with cleaning supplies.")
-
 hallway = Room("Hallway")
 hallway.set_description ("A long hallway lined with paintings."
 
@@ -27,8 +24,6 @@ dining_hall.link_room(ballroom, "west")
 ballroom.link_room(dining_hall, "east")
 hallway.link_room(ballroom, "south")
 ballroom.link_room(hallway, "north")
-hallway.link_room(closet, "west")
-closet.link_room(hallway, "east")
 cellar.link_room(kitchen, "up")
 kitchen.link_room(cellar, "below")
 cellar.link_room(wine_cellar, "east")
