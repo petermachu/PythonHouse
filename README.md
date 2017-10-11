@@ -28,3 +28,6 @@ kitchen.set_description("A dank and dirty room buzzing with flies.")
 kitchen.link_room(dining_hall, "south")
 
 dining_hall.link_room(kitchen, "north")
+
+
+Move through the house here: https://trinket.io/python/c0bf3c7c32
