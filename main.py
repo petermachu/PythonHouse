@@ -31,7 +31,7 @@ cellar.link_room(kitchen, "up")
 kitchen.link_room(cellar, "below")
 cellar.link_room(wine_cellar, "east")
 wine_cellar.link_room(cellar, "west")
-swiming_pool.link_room(ballroom, "east")
+swimming_pool.link_room(ballroom, "east")
 ballroom.link_room(swimming_pool, "west")                         
                          
 current_room = kitchen
