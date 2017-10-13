@@ -19,7 +19,10 @@ wine_cellar = Room("Wine Cellar")
 wine_cellar.set_description ("A nearly pitch black room with empty wineracks along the walls and broken glass on the floor.")
                          
 swimming_pool = Room("Swimming Pool")
-swimming_pool.set_description ("A deep pool filled with distilled water with a tiny bit of chlorine and urine.")                     
+swimming_pool.set_description ("A deep pool filled with distilled water with a tiny bit of chlorine and urine.")
+                         
+gym = Room("Gym")
+gmy.set_description ("A huge room with a glass ceiling and one yoga ball in the center of the room.")
 
 kitchen.link_room(dining_hall, "south")
 dining_hall.link_room(kitchen, "north")
@@ -32,7 +35,9 @@ kitchen.link_room(cellar, "below")
 cellar.link_room(wine_cellar, "east")
 wine_cellar.link_room(cellar, "west")
 swimming_pool.link_room(ballroom, "east")
-ballroom.link_room(swimming_pool, "west")                         
+ballroom.link_room(swimming_pool, "west")
+gym.link_room(swimming_pool, "down")
+swimming_pool.link_room(gym, "up")                        
                          
 current_room = kitchen
 
