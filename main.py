@@ -1,4 +1,5 @@
 from room import Room
+from character import Enemy, Character, Friend
 
 kitchen = Room("Kitchen")
 kitchen.set_description("A dank and dirty room buzzing with flies.")
@@ -37,13 +38,27 @@ wine_cellar.link_room(cellar, "west")
 swimming_pool.link_room(ballroom, "east")
 ballroom.link_room(swimming_pool, "west")
 gym.link_room(swimming_pool, "down")
-swimming_pool.link_room(gym, "up")                        
+swimming_pool.link_room(gym, "up")
+
+dave = Enemy("Dave", "a smelly, hungry zombie.")
+dave.set_conversation("Brrlgrh... rgrhl... braaains...")
+dave.set_weakness("brains")
+dining_hall.set_character(dave)
+
+catrina = Friend("Catrina", "a tall friendly skeleton.")
+catrina.set_conversation("Why hello there, friend!")
+ballroom.set_character(catrina)
                          
 current_room = kitchen
 
 while True:
     print ("\n")
     current_room.get_details()
+    inhabitant = current_room.get_character()
+    if inhabitant is not None:
+      inhabitant.describe()
+
+
     command = raw_input("> ")
     current_room = current_room.move(command)
 
