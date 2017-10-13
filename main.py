@@ -17,6 +17,9 @@ cellar.set_description ("A dark smelly room littered with rotting food that emit
 
 wine_cellar = Room("Wine Cellar")
 wine_cellar.set_description ("A nearly pitch black room with empty wineracks along the walls and broken glass on the floor.")
+                         
+swimming_pool = Room("Swimming Pool")
+swimming_pool.set_description ("A deep pool filled with distilled water with a tiny bit of chlorine and urine.")                     
 
 kitchen.link_room(dining_hall, "south")
 dining_hall.link_room(kitchen, "north")
@@ -28,6 +31,8 @@ cellar.link_room(kitchen, "up")
 kitchen.link_room(cellar, "below")
 cellar.link_room(wine_cellar, "east")
 wine_cellar.link_room(cellar, "west")
+swiming_pool.link_room(ballroom, "east")
+ballroom.link_room(swimming_pool, "west")                         
                          
 current_room = kitchen
 
